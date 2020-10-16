@@ -4,6 +4,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useEffect } from 'react';
+import AppointmentShortList from '../AppointmentShortList/AppointmentShortList';
 
 const containerStyle = {
     backgroundColor: "#F4FDFB",
