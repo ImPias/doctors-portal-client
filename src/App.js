@@ -10,6 +10,7 @@ import Home from './components/Home/Home/Home';
 import Appointment from './components/Appointment/Appointment/Appointment';
 import Login from './components/Login/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import AddDoctor from './components/AddDoctor/AddDoctor';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import AllPatients from './components/AllPatients/AllPatients/AllPatients';
 
@@ -30,6 +31,9 @@ function App() {
           <PrivateRoute path="/allPatients">
             <AllPatients></AllPatients>
           </PrivateRoute>
+          <Route path="/addDoctor">
+            <AddDoctor></AddDoctor>
+          </Route>
           <Route path="/login">
             <Login></Login>
           </Route>

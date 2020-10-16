@@ -8,6 +8,20 @@ import { UserContext } from '../../../App';
 
 const Sidebar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [isDoctor, setIsDoctor] = useState(false);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/isDoctor', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                setIsDoctor(data);
+            });
+    }, [])
 
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}>
@@ -22,7 +36,7 @@ const Sidebar = () => {
                         <FontAwesomeIcon icon={faHome} /> <span>Home</span>
                     </Link>
                 </li>
-                <div> 
+                {isDoctor &&<div> 
                     <li>
                         <Link to="/allPatients" className="text-white">
                             <FontAwesomeIcon icon={faCalendar} /> <span>Appointments</span>
@@ -39,11 +53,16 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li>
+                        <Link to="/addDoctor" className="text-white" >
+                            <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctor</span>
+                        </Link>
+                    </li>
+                    <li>
                         <Link to="/doctor/setting" className="text-white" >
                             <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
                         </Link>
                     </li>
-                </div>
+                </div>}
             </ul>
             <div>
                 <Link to="/" className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>

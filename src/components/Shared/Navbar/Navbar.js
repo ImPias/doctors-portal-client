@@ -14,13 +14,13 @@ const Navbar = () => {
                         <a className="nav-link mr-5" href="/">Home <span className="sr-only">(current)</span></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link mr-5" href="/abot">About</a>
+                        <a className="nav-link mr-5" href="/patient/appointments">Patient</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link mr-5" href="/services">Dental Services</a>
+                        <a className="nav-link mr-5" href="/dashboard">Dashboard</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link mr-5 text-white" href="/reviews">Reviews</a>
+                        <a className="nav-link mr-5 text-white" href="/dashboard">Admin</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link mr-5 text-white" href="/blogs">Blogs</a>
